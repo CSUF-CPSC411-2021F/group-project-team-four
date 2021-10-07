@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityList">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activityList"
+        android:layout_width="352dp"
+        android:layout_height="481dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="67dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="221dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/screenTitle"
+        android:layout_width="139dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="16dp"
+        android:text="All Activities"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/sortOptionsList"
+        android:layout_width="130dp"
+        android:layout_height="24dp"
+        android:entries="@array/sortOptionsArray"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="104dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenTitle" />
+
+    <TextView
+        android:id="@+id/sortTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="23dp"
+        android:text="Sort:"
+        app:layout_constraintEnd_toStartOf="@+id/sortOptionsList"
+        app:layout_constraintTop_toBottomOf="@+id/screenTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

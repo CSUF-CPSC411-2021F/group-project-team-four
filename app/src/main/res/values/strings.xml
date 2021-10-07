@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Skool Planner</string>
+    <string-array name="sortOptionsArray">
+        <item>Priority</item>
+        <item>Due Date</item>
+        <item>Class</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
