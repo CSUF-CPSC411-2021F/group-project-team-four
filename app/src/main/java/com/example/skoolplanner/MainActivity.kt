@@ -3,43 +3,73 @@ package com.example.skoolplanner
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.skoolplanner.databinding.ActivityMainBinding
+import com.example.skoolplanner.databinding.CreateExamBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.MaterialTimePicker.INPUT_MODE_KEYBOARD
 import com.google.android.material.timepicker.TimeFormat
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: CreateExamBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.create_exam)
+        binding = CreateExamBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val timePicker: TextView = findViewById(R.id.select_time)
-        timePicker.setOnClickListener {
+
+        binding.selectTime.setOnClickListener {
             openTimePicker()
         }
 
-        val datePicker: TextView = findViewById(R.id.select_date)
-        datePicker.setOnClickListener {
+        binding.selectDate.setOnClickListener {
             openDatePicker()
         }
     }
 
     private fun openDatePicker() {
         val picker = MaterialDatePicker.Builder.datePicker()
-            .setTitleText("Select Date")
+            .setTitleText("Select Exam Date")
+            .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
             .build()
         picker.show(supportFragmentManager, "tag")
+
+        picker.addOnPositiveButtonClickListener {
+            val date = "Date: ${picker.headerText}"
+            binding.selectDate.text = date
+        }
     }
 
     private fun openTimePicker() {
-        val clockFormat = TimeFormat.CLOCK_12H
 
         val picker = MaterialTimePicker.Builder()
-            .setTimeFormat(clockFormat)
+            .setInputMode(INPUT_MODE_KEYBOARD)
+            .setTimeFormat(TimeFormat.CLOCK_12H)
             .setHour(12)
-            .setMinute(0)
-            .setTitleText("Pick date and time")
+            .setMinute(10)
+            .setTitleText("Select Exam time")
             .build()
         picker.show(supportFragmentManager, "Tag")
+        picker.addOnPositiveButtonClickListener {
+            val hour: Int = picker.hour
+            var newHour: Int = hour % 12
+            val minute: Int = picker.minute
+            if (newHour == 0) {
+                newHour = 12
+            }
+
+            val clockPeriod: String = if (hour >= 12) {
+                "PM"
+            } else {
+                "AM"
+            }
+
+
+            val time = "Time: $newHour:$minute $clockPeriod"
+            binding.selectTime.text = time
+        }
     }
 
 
