@@ -4,7 +4,7 @@
 
     <string-array name="sort_options">
         <item>Priority</item>
-        <item>Time</item>
+        <item>Date</item>
         <item>A-Z</item>
         <item>Z-A</item>
     </string-array>
