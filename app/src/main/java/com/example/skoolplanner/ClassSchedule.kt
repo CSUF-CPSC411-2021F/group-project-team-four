@@ -18,7 +18,7 @@ class ClassSchedule : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//
+
 //        var scheduleAdapter = ScheduleAdapter(this)
 //        binding.scheduleList.adapter = scheduleAdapter
     }
