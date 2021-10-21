@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import com.example.skoolplanner.databinding.FragmentViewClassBinding
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,8 +35,19 @@ class ViewClassFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_class, container, false)
+        val binding = DataBindingUtil.inflate<FragmentViewClassBinding>(inflater,
+            R.layout.fragment_view_class,container,false)
+
+        binding.addButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(ViewClassFragmentDirections.actionViewClassFragment2ToAddClassFragment())
+        }
+
+        binding.editButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(ViewClassFragmentDirections.actionViewClassFragment2ToEditClassFragment())
+        }
+
+        setHasOptionsMenu(true)
+        return binding.root
     }
 
     companion object {

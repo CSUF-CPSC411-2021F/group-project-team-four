@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.skoolplanner.databinding.FragmentAddClassBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,9 +35,19 @@ class AddClassFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_class, container, false)
+    ): View? {val binding = DataBindingUtil.inflate<FragmentAddClassBinding>(inflater,
+        R.layout.fragment_view_class,container,false)
+
+        binding.addButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(AddClassFragmentDirections.actionAddClassFragmentToViewClassFragment2())
+        }
+
+        binding.cancelButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(AddClassFragmentDirections.actionAddClassFragmentToViewClassFragment2())
+        }
+
+        setHasOptionsMenu(true)
+        return binding.root
     }
 
     companion object {
