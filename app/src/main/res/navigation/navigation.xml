@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/activityList">
+
+    <fragment
+        android:id="@+id/activityList"
+        android:name="com.example.skoolplanner.ActivityList"
+        android:label="activity_list"
+        tools:layout="@layout/activity_list" >
+        <action
+            android:id="@+id/action_activityList_to_createActivity"
+            app:destination="@id/createActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/createActivity"
+        android:name="com.example.skoolplanner.CreateActivity"
+        android:label="CreateActivity" >
+        <action
+            android:id="@+id/action_createActivity_to_activityList"
+            app:destination="@id/activityList" />
+    </fragment>
+</navigation>

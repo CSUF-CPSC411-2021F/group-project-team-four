@@ -8,4 +8,9 @@
         <item>A-Z</item>
         <item>Z-A</item>
     </string-array>
+    <string-array name="sortOptionsArray">
+        <item>Priority</item>
+        <item>Due Date</item>
+        <item>Class</item>
+    </string-array>
 </resources>

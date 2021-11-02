@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <fragment
+        android:id="@+id/nav_host"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/todayViewFragment"
-            android:name="com.example.skoolplanner.TodayView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
-        </LinearLayout>
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/navigation"
+        app:defaultNavHost="true"/>
 
-</layout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

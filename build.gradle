@@ -1,12 +1,24 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    // Adds Room version
+    ext {
+        room_version = '2.4.0-alpha03'
+    }
     repositories {
         google()
         mavenCentral()
     }
+    // Creates a variable to easily switch the version of the library
+    ext {
+        navigationVersion = "2.3.5"
+    }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.2"
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+
+        // Adds safeargs dependencies
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        // End of safeargs dependencies
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
