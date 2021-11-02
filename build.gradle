@@ -1,5 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    // Adds Room version
+    ext {
+        room_version = '2.4.0-alpha03'
+    }
     repositories {
         google()
         mavenCentral()
