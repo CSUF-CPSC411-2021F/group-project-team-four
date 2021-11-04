@@ -22,11 +22,13 @@ class AddClassFragment : Fragment() {
         val binding = FragmentAddClassBinding.inflate(layoutInflater)
 
         binding.addButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(AddClassFragmentDirections.actionAddClassFragmentToViewClassFragment())
+            view.findNavController()
+                .navigate(R.id.action_addClassFragment_to_viewClassFragment)
         }
 
         binding.cancelButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(AddClassFragmentDirections.actionAddClassFragmentToViewClassFragment())
+            view.findNavController()
+                .navigate(R.id.action_addClassFragment_to_viewClassFragment)
         }
 
         return binding.root

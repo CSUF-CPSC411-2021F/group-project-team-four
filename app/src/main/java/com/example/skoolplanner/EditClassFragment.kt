@@ -22,7 +22,8 @@ class EditClassFragment : Fragment() {
         val binding = FragmentEditClassBinding.inflate(layoutInflater)
 
         binding.doneButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(EditClassFragmentDirections.actionEditClassFragmentToViewClassFragment())
+            view.findNavController()
+                .navigate(R.id.action_editClassFragment_to_viewClassFragment)
         }
 
         return binding.root

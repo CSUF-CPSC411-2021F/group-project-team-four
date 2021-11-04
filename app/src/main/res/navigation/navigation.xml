@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_activityList_to_examView"
             app:destination="@id/examView" />
+        <action
+            android:id="@+id/action_activityList_to_viewClassFragment"
+            app:destination="@id/viewClassFragment" />
     </fragment>
     <fragment
         android:id="@+id/createActivity"
@@ -48,5 +51,35 @@
         <action
             android:id="@+id/action_createExam_to_examView"
             app:destination="@id/examView" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewClassFragment"
+        android:name="com.example.skoolplanner.ViewClassFragment"
+        android:label="fragment_view_class"
+        tools:layout="@layout/fragment_view_class" >
+        <action
+            android:id="@+id/action_viewClassFragment_to_addClassFragment"
+            app:destination="@id/addClassFragment" />
+        <action
+            android:id="@+id/action_viewClassFragment_to_editClassFragment"
+            app:destination="@id/editClassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editClassFragment"
+        android:name="com.example.skoolplanner.EditClassFragment"
+        android:label="fragment_edit_class"
+        tools:layout="@layout/fragment_edit_class" >
+        <action
+            android:id="@+id/action_editClassFragment_to_viewClassFragment"
+            app:destination="@id/viewClassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addClassFragment"
+        android:name="com.example.skoolplanner.AddClassFragment"
+        android:label="fragment_add_class"
+        tools:layout="@layout/fragment_add_class" >
+        <action
+            android:id="@+id/action_addClassFragment_to_viewClassFragment"
+            app:destination="@id/viewClassFragment" />
     </fragment>
 </navigation>

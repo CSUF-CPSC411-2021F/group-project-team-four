@@ -20,11 +20,13 @@ class ViewClassFragment : Fragment() {
         val binding = FragmentViewClassBinding.inflate(layoutInflater)
 
         binding.addButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(ViewClassFragmentDirections.actionViewClassFragmentToAddClassFragment())
+            view.findNavController()
+                .navigate(R.id.action_viewClassFragment_to_addClassFragment)
         }
 
         binding.editButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(ViewClassFragmentDirections.actionViewClassFragmentToEditClassFragment())
+            view.findNavController()
+                .navigate(R.id.action_viewClassFragment_to_editClassFragment)
         }
 
         return binding.root
