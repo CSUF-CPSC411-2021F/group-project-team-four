@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/viewClassFragment2">
+    app:startDestination="@id/viewClassFragment">
 
     <fragment
-        android:id="@+id/viewClassFragment2"
+        android:id="@+id/viewClassFragment"
         android:name="com.example.skoolplanner.ViewClassFragment"
         android:label="fragment_view_class"
         tools:layout="@layout/fragment_view_class" >
         <action
-            android:id="@+id/action_viewClassFragment2_to_addClassFragment"
+            android:id="@+id/action_viewClassFragment_to_addClassFragment"
             app:destination="@id/addClassFragment" />
         <action
-            android:id="@+id/action_viewClassFragment2_to_editClassFragment"
+            android:id="@+id/action_viewClassFragment_to_editClassFragment"
             app:destination="@id/editClassFragment" />
     </fragment>
     <fragment
@@ -23,8 +23,8 @@
         android:label="fragment_add_class"
         tools:layout="@layout/fragment_add_class" >
         <action
-            android:id="@+id/action_addClassFragment_to_viewClassFragment2"
-            app:destination="@id/viewClassFragment2" />
+            android:id="@+id/action_addClassFragment_to_viewClassFragment"
+            app:destination="@id/viewClassFragment" />
     </fragment>
     <fragment
         android:id="@+id/editClassFragment"
@@ -32,7 +32,7 @@
         android:label="fragment_edit_class"
         tools:layout="@layout/fragment_edit_class" >
         <action
-            android:id="@+id/action_editClassFragment_to_viewClassFragment2"
-            app:destination="@id/viewClassFragment2" />
+            android:id="@+id/action_editClassFragment_to_viewClassFragment"
+            app:destination="@id/viewClassFragment" />
     </fragment>
 </navigation>

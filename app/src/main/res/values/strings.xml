@@ -2,4 +2,8 @@
     <string name="app_name">Skool Planner</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="class_days_header">Enter the Days Class Meets</string>
+    <string name="class_name_hint">ex: CPSC 411-01</string>
+    <string name="class_name_header">Enter Class Name and Section</string>
+    <string name="class_time_header">Enter the Class Start and End Time</string>
 </resources>
