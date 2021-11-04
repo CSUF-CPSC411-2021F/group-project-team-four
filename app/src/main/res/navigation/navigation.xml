@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_activityList_to_todayView"
             app:destination="@id/todayView" />
+        <action
+            android:id="@+id/action_activityList_to_examView"
+            app:destination="@id/examView" />
     </fragment>
     <fragment
         android:id="@+id/createActivity"
@@ -29,4 +32,21 @@
         android:id="@+id/todayView"
         android:name="com.example.skoolplanner.TodayView"
         android:label="TodayView" />
+    <fragment
+        android:id="@+id/examView"
+        android:name="com.example.skoolplanner.ExamView"
+        android:label="fragment_exam_view"
+        tools:layout="@layout/fragment_exam_view" >
+        <action
+            android:id="@+id/action_examView_to_createExam"
+            app:destination="@id/createExam" />
+    </fragment>
+    <fragment
+        android:id="@+id/createExam"
+        android:name="com.example.skoolplanner.CreateExam"
+        android:label="CreateExam" >
+        <action
+            android:id="@+id/action_createExam_to_examView"
+            app:destination="@id/examView" />
+    </fragment>
 </navigation>

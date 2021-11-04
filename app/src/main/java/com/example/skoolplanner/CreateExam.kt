@@ -36,8 +36,8 @@ class CreateExam : Fragment() {
             openDatePicker()
         }
 
-        binding.cancelExam.setOnClickListener {
-            it.findNavController()
+       binding.cancelExam.setOnClickListener {
+             it.findNavController()
                 .navigate(R.id.action_createExam_to_examView)
         }
         return binding.root
