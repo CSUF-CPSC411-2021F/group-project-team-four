@@ -18,5 +18,9 @@
     <string name="select_date">Select Date</string>
     <string name="enter_description">Enter Description ...</string>
 
-
+    <string name="class_days_header">Enter the Days Class Meets</string>
+    <string name="class_name_hint">ex: CPSC 411-01</string>
+    <string name="class_name_header">Enter Class Name and Section</string>
+    <string name="class_time_header">Enter the Class Start and End Time</string>
+    <string name="my_class_schedule">My Class Schedule</string>
 </resources>
