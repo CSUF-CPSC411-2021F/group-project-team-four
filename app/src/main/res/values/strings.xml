@@ -13,4 +13,10 @@
         <item>Due Date</item>
         <item>Class</item>
     </string-array>
+    <string name="enter_exam_title">Enter Exam Title</string>
+    <string name="select_time">Select Time</string>
+    <string name="select_date">Select Date</string>
+    <string name="enter_description">Enter Description ...</string>
+
+
 </resources>
