@@ -35,7 +35,7 @@ class ActivityList : Fragment() {
         // button is clicked on
         binding.addActivityButton.setOnClickListener { view: View ->
             view.findNavController()
-                .navigate(R.id.action_activityList_to_viewClassFragment)
+                .navigate(R.id.action_activityList_to_createActivity)
         }
 
         // Return a link to the layout root

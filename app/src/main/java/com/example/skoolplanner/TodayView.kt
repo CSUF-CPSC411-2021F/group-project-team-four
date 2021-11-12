@@ -17,12 +17,6 @@ import java.util.*
 
 class TodayView : Fragment() {
 
-    val sortPriority: String = "Priority"
-    val sortDate: String = "Date"
-    val sortAlpha: String = "A-Z"
-    val sortRevAlpha: String = "Z-A"
-
-
     var clickedDate: String = ""
 
     override fun onCreateView(

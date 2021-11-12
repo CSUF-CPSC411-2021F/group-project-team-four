@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/activityList">
+    app:startDestination="@id/todayView">
 
     <fragment
         android:id="@+id/activityList"
@@ -13,15 +13,6 @@
         <action
             android:id="@+id/action_activityList_to_createActivity"
             app:destination="@id/createActivity" />
-        <action
-            android:id="@+id/action_activityList_to_todayView"
-            app:destination="@id/todayView" />
-        <action
-            android:id="@+id/action_activityList_to_examView"
-            app:destination="@id/examView" />
-        <action
-            android:id="@+id/action_activityList_to_viewClassFragment"
-            app:destination="@id/viewClassFragment" />
     </fragment>
     <fragment
         android:id="@+id/createActivity"
@@ -30,11 +21,24 @@
         <action
             android:id="@+id/action_createActivity_to_activityList"
             app:destination="@id/activityList" />
+        <action
+            android:id="@+id/action_createActivity_to_todayView"
+            app:destination="@id/todayView" />
     </fragment>
     <fragment
         android:id="@+id/todayView"
         android:name="com.example.skoolplanner.TodayView"
-        android:label="TodayView" />
+        android:label="TodayView" >
+        <action
+            android:id="@+id/action_todayView_to_examView2"
+            app:destination="@id/examView" />
+        <action
+            android:id="@+id/action_todayView_to_createActivity"
+            app:destination="@id/createActivity" />
+        <action
+            android:id="@+id/action_todayView_to_viewClassFragment2"
+            app:destination="@id/viewClassFragment" />
+    </fragment>
     <fragment
         android:id="@+id/examView"
         android:name="com.example.skoolplanner.ExamView"
@@ -43,6 +47,9 @@
         <action
             android:id="@+id/action_examView_to_createExam"
             app:destination="@id/createExam" />
+        <action
+            android:id="@+id/action_examView_to_todayView2"
+            app:destination="@id/todayView" />
     </fragment>
     <fragment
         android:id="@+id/createExam"
@@ -63,6 +70,9 @@
         <action
             android:id="@+id/action_viewClassFragment_to_editClassFragment"
             app:destination="@id/editClassFragment" />
+        <action
+            android:id="@+id/action_viewClassFragment_to_todayView2"
+            app:destination="@id/todayView" />
     </fragment>
     <fragment
         android:id="@+id/editClassFragment"
