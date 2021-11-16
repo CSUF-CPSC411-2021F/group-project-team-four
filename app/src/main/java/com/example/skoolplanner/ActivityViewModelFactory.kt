@@ -6,14 +6,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.skoolplanner.database.ActivityDao
 
 /**
- * Generates an IntersectionViewModel tied to the database.
+ * Generates an ActivityViewModel tied to the database.
  */
 class IntersectionViewModelFactory(
     private val dataSource: ActivityDao, // Data access object
     private val application: Application): ViewModelProvider.Factory {
 
     /**
-     * Creates the IntersectionViewModel
+     * Creates the ActivityViewModel
      */
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

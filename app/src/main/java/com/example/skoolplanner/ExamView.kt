@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import com.example.skoolplanner.adapter.ExamItemAdapter
 import com.example.skoolplanner.data.Datasource
 import com.example.skoolplanner.databinding.FragmentExamViewBinding
-import com.example.skoolplanner.model.Exam
+import com.example.skoolplanner.database.Exam
 
 
 /**

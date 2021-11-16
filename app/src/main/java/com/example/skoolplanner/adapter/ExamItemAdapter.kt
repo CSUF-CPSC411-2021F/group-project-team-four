@@ -4,11 +4,12 @@ package com.example.skoolplanner.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.skoolplanner.database.Exam
 import com.example.skoolplanner.databinding.ExamItemBinding
 
 
 class ExamItemAdapter(
-    private var dataset: MutableList<com.example.skoolplanner.model.Exam> = mutableListOf<com.example.skoolplanner.model.Exam>()
+    private var dataset: MutableList<Exam> = mutableListOf<Exam>()
 ) : RecyclerView.Adapter<ExamItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(private val binding: ExamItemBinding) :
