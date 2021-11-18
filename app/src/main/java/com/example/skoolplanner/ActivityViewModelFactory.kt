@@ -8,7 +8,7 @@ import com.example.skoolplanner.database.ActivityDao
 /**
  * Generates an IntersectionViewModel tied to the database.
  */
-class IntersectionViewModelFactory(
+class ActivityViewModelFactory(
     private val dataSource: ActivityDao, // Data access object
     private val application: Application): ViewModelProvider.Factory {
 

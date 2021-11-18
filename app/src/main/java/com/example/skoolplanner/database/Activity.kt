@@ -7,15 +7,15 @@ import androidx.room.PrimaryKey
 /**
  * A class that represents an Activity entity.
  */
-@Entity(tableName = "activity-table")
-data class Activity (
+@Entity(tableName = "activity_table")
+data class Activity(
 
     @PrimaryKey(autoGenerate = true)
     var activityId: Long = 0L,
 
-    @ColumnInfo()
+    @ColumnInfo
     var name: String = "",
 
-    @ColumnInfo()
+    @ColumnInfo
     var dueDate: String = ""
 )

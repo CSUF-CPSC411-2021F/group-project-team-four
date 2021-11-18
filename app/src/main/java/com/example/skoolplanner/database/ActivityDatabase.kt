@@ -33,7 +33,7 @@ abstract class ActivityDatabase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         ActivityDatabase::class.java, // Your database class
-                    "<Name of your database>"
+                    "activity_database"
                     )
                     .fallbackToDestructiveMigration()
                         .build()

@@ -20,6 +20,9 @@ class ActivityViewModel(
     var name = MutableLiveData("") // Name property of Activity
     var dueDate = MutableLiveData("") // Due date property of Activity
 
+    // Gets all Activity objects from the database
+    val activityList = database.getAllActivities()
+
     /**
      * Inserts an Activity object into the database.
      */
@@ -34,4 +37,13 @@ class ActivityViewModel(
             database.insert(activity)
         }
     }
+
+    /**
+     * Deletes all Activity objects from the database
+     */
+    fun clear() {
+        viewModelScope.launch {
+            database.clear()
+        }
     }
+}

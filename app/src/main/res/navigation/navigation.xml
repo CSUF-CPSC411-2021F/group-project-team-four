@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_activityList_to_viewClassFragment"
             app:destination="@id/viewClassFragment" />
+        <action
+            android:id="@+id/action_activityList_to_activityItemFragment"
+            app:destination="@id/activityItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/createActivity"
@@ -81,5 +84,13 @@
         <action
             android:id="@+id/action_addClassFragment_to_viewClassFragment"
             app:destination="@id/viewClassFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityItemFragment"
+        android:name="com.example.skoolplanner.ActivityItemFragment"
+        android:label="Activity Information">
+        <argument
+            android:name="activityId"
+            app:argType="long" />
     </fragment>
 </navigation>

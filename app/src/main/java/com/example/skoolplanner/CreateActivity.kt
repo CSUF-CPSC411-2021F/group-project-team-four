@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
-import com.example.skoolplanner.databinding.CreateActivityBinding
+//import com.example.skoolplanner.databinding.CreateActivityBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,22 +31,22 @@ class CreateActivity : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    //override fun onCreateView(
+      //  inflater: LayoutInflater, container: ViewGroup?,
+        //savedInstanceState: Bundle?
+    //): View? {
         // Inflate the layout for this fragment
-        val binding = CreateActivityBinding.inflate(layoutInflater)
+        //val binding = CreateActivityBinding.inflate(layoutInflater)
 
         // Moves from the CreateActivity view to the ActivityList view when the "Add" button is
         // clicked on
-        binding.addButton.setOnClickListener{ view: View ->
-            view.findNavController()
-                .navigate(R.id.action_createActivity_to_activityList)
-        }
+        //binding.addButton.setOnClickListener{ view: View ->
+          //  view.findNavController()
+            //    .navigate(R.id.action_createActivity_to_activityList)
+        //}
 
-        return binding.root
-    }
+        //return binding.root
+    //}
 
     companion object {
         /**
