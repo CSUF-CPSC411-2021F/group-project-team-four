@@ -7,15 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.skoolplanner.databinding.ClassScheduleListBinding
 
 class ScheduleAdapter (
-    private val context: Context,
-    var dataset: MutableList<String> = mutableListOf<String>()
+    var dataset: MutableList<com.example.skoolplanner.database.ClassSchedule> = mutableListOf<com.example.skoolplanner.database.ClassSchedule>()
     ) : RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder>() {
 
         // ScheduleViewHolder holds the data of each element in the RecyclerView
         class ScheduleViewHolder(private val binding: ClassScheduleListBinding) :
             RecyclerView.ViewHolder(binding.root) {
-            val scheduleList = binding.ScheduleList
             val position = binding.Position
+            val secId = binding.SecId
+            val className = binding.ClassName
+            val classDays = binding.ClassDays
+            val classStartTime = binding.ClassStartTime
+            val classEndTime = binding.ClassEndTime
         }
 
         // Creates the view holder object and passes the necessary arguments.
@@ -32,7 +35,10 @@ class ScheduleAdapter (
             val item = dataset[position]
 
             holder.position.text = (position + 1).toString() + "."
-            holder.scheduleList.text = item
+            holder.className.text = item.className
+            holder.classDays.text = item.classDays
+            holder.classStartTime.text = item.classStartTime
+            holder.classEndTime.text = item.classEndTime
         }
 
         // Returns the number of elements in the dataset.

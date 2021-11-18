@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.skoolplanner.databinding.FragmentViewClassBinding
 import androidx.navigation.findNavController
+import com.example.skoolplanner.adapter.ScheduleAdapter
+import com.example.skoolplanner.data.Datasource
 
 /**
  * A simple [Fragment] subclass.
@@ -18,6 +20,11 @@ class ViewClassFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val binding = FragmentViewClassBinding.inflate(layoutInflater)
+        val classDataset = Datasource().loadClassSchedules()
+
+        // The RecyclerView adapter is created here, scheduleAdapter, and it is assigned to the RecyclerView.
+        var scheduleAdapter = ScheduleAdapter(classDataset as MutableList<ClassSchedule>)
+        binding.scheduleList.adapter = scheduleAdapter
 
         binding.addButton.setOnClickListener { view: View ->
             view.findNavController()
