@@ -5,11 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Activity::class, Exam::class], version = 1, exportSchema = false)
+@Database(entities = [Activity::class], version = 1, exportSchema = false)
 abstract class ActivityDatabase: RoomDatabase() {
     // Data access object for the entity.
     abstract val activityDao: ActivityDao
-    abstract val examDao: ExamDao
 
     companion object {
         // Holds a reference to the database.
