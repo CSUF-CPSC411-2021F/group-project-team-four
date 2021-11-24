@@ -35,6 +35,7 @@ class ScheduleAdapter (
             val item = dataset[position]
 
             holder.position.text = (position + 1).toString() + "."
+            holder.secId.text = item.secId.toString()
             holder.className.text = item.className
             holder.classDays.text = item.classDays
             holder.classStartTime.text = item.classStartTime
