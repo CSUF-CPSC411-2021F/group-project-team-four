@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Displays information about the intersection selected from the RecyclerView -->
+    <!-- Displays information about the activity selected from the RecyclerView -->
     <data>
-        <!-- ViewModel that contains data about the intersection. -->
+        <!-- ViewModel that contains data about the activity. -->
         <variable
             name="activityItemViewModel"
             type="com.example.skoolplanner.ActivityItemViewModel" />

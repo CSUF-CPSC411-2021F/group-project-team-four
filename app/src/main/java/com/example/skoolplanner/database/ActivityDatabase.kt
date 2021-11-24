@@ -5,6 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+/**
+ * Handles the database that contains the Activity table
+ */
 @Database(entities = [Activity::class], version = 1, exportSchema = false)
 abstract class ActivityDatabase: RoomDatabase() {
     // Data access object for the entity.

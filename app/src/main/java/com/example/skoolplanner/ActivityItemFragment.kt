@@ -21,26 +21,33 @@ class ActivityItemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Retrieves the arguments passed from the RecyclerView
         val args = ActivityItemFragmentArgs.fromBundle(requireArguments())
 
+        // Creates data binding
         val binding: ActivityItemFragmentBinding =
             DataBindingUtil.inflate(inflater, R.layout.activity_item_fragment, container, false)
 
+        // Gets reference to application
         val application = requireNotNull(this.activity).application
 
+        // Gets the Activity Dao
         val dataSource = ActivityDatabase.getInstance(application).activityDao
 
+        // Creates a factory that generates ActivityItemViewModels connected to the database
         val viewModelFactory =
             ActivityItemViewModelFactory(args.activityId, dataSource, application)
 
+        // Creates an ActivityItemViewModel
         val activityItemViewModel =
             ViewModelProvider(
                 this, viewModelFactory
             ).get(ActivityItemViewModel::class.java)
 
+        // Connects the ActivityViewModel to the variable in the layout
         binding.activityItemViewModel = activityItemViewModel
 
+        // Assigns the lifecycle owner to this activity
         binding.lifecycleOwner = this
 
         return binding.root
