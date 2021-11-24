@@ -3,8 +3,6 @@ package com.example.skoolplanner.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.skoolplanner.databinding.ClassScheduleListBinding
-import com.example.skoolplanner.databinding.ExamItemBinding
 import com.example.skoolplanner.databinding.TodayViewItemBinding
 import com.example.skoolplanner.model.Exam
 
@@ -31,7 +29,6 @@ class TodayViewAdapter(
 
     override fun onBindViewHolder(holder: TodayViewHolder, position: Int) {
         val item = dataset[position]
-        //Todo: Currently using exam model as temporary item until database is finished
         holder.activityDueDate.text = item.date
         holder.activityName.text = item.name
         holder.className.text = item.className

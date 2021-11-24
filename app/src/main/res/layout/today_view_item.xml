@@ -1,56 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <data>
 
+    </data>
 
-    <TextView
-        android:id="@+id/ActivityDueDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:text="01/01/1900"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/ClassName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ActivityDueDate"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="Temp Name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/ActivityName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ActivityDueDate"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_toRightOf="@id/ClassName"
-        android:text="Name"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/ActivityTime"
-        android:layout_width="107dp"
-        android:layout_height="26dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="94dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="92dp"
-        android:layout_toEndOf="@+id/ActivityDueDate"
-        android:layout_toRightOf="@id/ClassName"
-        android:text="5:50 PM"
-        android:textSize="20sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/ActivityDueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="01/01/1900"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/ClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ActivityDueDate"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Temp Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ActivityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ActivityDueDate"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toRightOf="@id/ClassName"
+            android:text="Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ActivityTime"
+            android:layout_width="107dp"
+            android:layout_height="26dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="94dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="92dp"
+            android:layout_toEndOf="@+id/ActivityDueDate"
+            android:layout_toRightOf="@id/ClassName"
+            android:text="5:50 PM"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+</layout>
