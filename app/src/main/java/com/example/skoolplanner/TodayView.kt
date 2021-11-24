@@ -75,6 +75,7 @@ class TodayView : Fragment() {
         //using temp dataset until database is complete
         val dataset = Datasource().loadExams()
         val filteredDataset = mutableListOf<Exam>()
+
         Log.d("DebugLog", "ClickedDate:")
         Log.d("DebugLog",clickedDate)
         for (i in dataset)
