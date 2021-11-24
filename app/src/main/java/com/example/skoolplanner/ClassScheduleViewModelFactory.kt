@@ -2,9 +2,10 @@ package com.example.skoolplanner
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.skoolplanner.database.ClassScheduleDao
 
-class ClassScheduleViewModelFactory {
+class ClassScheduleViewModelFactory(
     private val dataSource: ClassScheduleDao, // Data access object
     private val application: Application): ViewModelProvider.Factory {
 
@@ -18,4 +19,4 @@ class ClassScheduleViewModelFactory {
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
-}
+    }
