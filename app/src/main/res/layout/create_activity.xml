@@ -14,14 +14,16 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/activityName"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:text="@={activityViewModel.name}"
+        />
 
     <EditText
-        android:id="@+id/activityDueDate"
+        android:id="@+id/dueDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Due Date"
