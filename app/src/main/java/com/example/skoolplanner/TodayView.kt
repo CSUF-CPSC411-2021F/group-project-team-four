@@ -1,6 +1,5 @@
 package com.example.skoolplanner
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil.setContentView
-import androidx.databinding.ViewDataBinding
+import com.example.skoolplanner.adapter.TodayViewAdapter
+import com.example.skoolplanner.databinding.FragmentTodayViewBinding
 import java.text.DateFormat
 import java.util.*
+import com.example.skoolplanner.data.Datasource
+import com.example.skoolplanner.model.Exam
+import java.text.SimpleDateFormat
 
 
 class TodayView : Fragment() {
@@ -23,10 +24,10 @@ class TodayView : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<ViewDataBinding>(inflater, R.layout.fragment_today_view,container,false)
+        val binding = FragmentTodayViewBinding.inflate(inflater, container, false)
 
         // Find spinner and attach sort options to it
-        val spinner: Spinner = binding.root.findViewById(R.id.sort_spinner)
+        val spinner: Spinner = binding.sortSpinner
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.sort_options,
@@ -47,20 +48,18 @@ class TodayView : Fragment() {
         }
 
         val calendar = Calendar.getInstance()
-        val calendarView: CalendarView = binding.root.findViewById(R.id.simpleCalendarView)
-        val dateFormatter = DateFormat.getDateInstance(DateFormat.SHORT)
-        clickedDate = dateFormatter.format(Date())
-        Log.d("DebugLog", "Starting Date:")
-        Log.d("DebugLog",clickedDate)
+        val calendarView: CalendarView = binding.simpleCalendarView
+        var simpleDateFormat = SimpleDateFormat("MM/dd/yyyy")
+        clickedDate = simpleDateFormat.format(Date())
+        getActivities(clickedDate, binding)
 
         calendarView.setOnDateChangeListener { view, year, month, day ->
             calendar.set(year,month,day)
 
-            clickedDate = dateFormatter.format(calendar.time)
-            Log.d("DebugLog", "Clicked Date:")
-            Log.d("DebugLog",clickedDate)
-        }
+            clickedDate = simpleDateFormat.format(calendar.time)
 
+            getActivities(clickedDate, binding)
+        }
         
         return binding.root
     }
@@ -70,8 +69,25 @@ class TodayView : Fragment() {
         This function will be called in order to populate the recycler view with the activities
         that are due for the current day that is selected in the calendar
     */
-    fun getActivities(){
+    fun getActivities(date: String, binding: FragmentTodayViewBinding){
+        var activityList = binding.activityList
 
+        //using temp dataset until database is complete
+        val dataset = Datasource().loadExams()
+        val filteredDataset = mutableListOf<Exam>()
+
+        Log.d("DebugLog", "ClickedDate:")
+        Log.d("DebugLog",clickedDate)
+        for (i in dataset)
+        {
+            Log.d("DebugLog", "DataDate:")
+            Log.d("DebugLog",i.date)
+            if (i.date == date)
+            {
+                filteredDataset.add(i)
+            }
+        }
+        activityList.adapter = TodayViewAdapter(filteredDataset)
     }
 
     /*

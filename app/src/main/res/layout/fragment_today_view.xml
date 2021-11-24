@@ -32,10 +32,10 @@
             android:background="?android:attr/listDivider" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/activity_list"
+            android:id="@+id/activityList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="LinearLayoutManager"/>
     </LinearLayout>
 
 </layout>
