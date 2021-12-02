@@ -4,6 +4,9 @@ plugins {
     id 'kotlin-kapt' // Plugin for using Room Package
 }
 
+// Safeargs plugin
+apply plugin: 'androidx.navigation.safeargs'
+
 android {
     compileSdk 31
 

@@ -2,10 +2,12 @@ package com.example.skoolplanner.database
 
 import android.provider.ContactsContract
 import androidx.lifecycle.LiveData
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 
+@Dao
 interface ClassScheduleDao {
     // Add a profile entity to a table in the database.
     // We use suspend to run the function asynchronously (coroutine).

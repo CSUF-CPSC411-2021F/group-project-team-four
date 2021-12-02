@@ -12,7 +12,6 @@ class ClassScheduleViewModel(
     val database: ClassScheduleDao, // Data access object for the ClassSchedule entity
     application: Application) : AndroidViewModel(application) {
 
-        var secId = MutableLiveData(0L)
         var className = MutableLiveData("")
         var classDays = MutableLiveData("")
         var classStartTime = MutableLiveData("")
@@ -31,7 +30,6 @@ class ClassScheduleViewModel(
             viewModelScope.launch {
                 // Create ClassSchedule object using data stored in the EditText views
                 var schedule = ClassSchedule()
-                schedule.secId = secId.value!!
                 schedule.className = className.value.toString()
                 schedule.classDays = classDays.value.toString()
                 schedule.classStartTime = classStartTime.value.toString()

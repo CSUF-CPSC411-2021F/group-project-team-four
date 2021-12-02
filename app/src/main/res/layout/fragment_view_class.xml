@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.skoolplanner.ViewClassFragment">
+    <!-- Main fragment showing the input text fields and intersection list. -->
+    <data>
+        <!-- IntersectionViewModel variable used to manage data on the fragment. -->
+        <variable
+            name="classScheduleViewModel"
+            type="com.example.skoolplanner.ClassScheduleViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewLayout"

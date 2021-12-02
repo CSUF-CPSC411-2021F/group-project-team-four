@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Single item on the RecyclerView -->
+    <data>
+        <!-- Variable that holds data about a single class schedule object. -->
+        <variable
+            name="schedule"
+            type="com.example.skoolplanner.database.ClassSchedule" />
+
+        <!-- Variable that holds a reference to the click listener. -->
+        <variable
+            name="clickListener"
+            type="com.example.skoolplanner.adapter.ScheduleListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Displays the name of the class. Clicking on the class will call the
+             passed clickListener's onClick function. It passes the intersection object
+             also used for populating the interface.
+        -->
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#72673AB7"
+            android:gravity="center_vertical"
+            android:onClick="@{()-> clickListener.onClick(schedule)}"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@{schedule.className}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
