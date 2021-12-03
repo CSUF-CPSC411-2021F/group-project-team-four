@@ -48,7 +48,7 @@ dependencies {
     // End of navigation dependencies
 
     // Required dependencies to use View models
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
     // Adds Room Package dependencies
     implementation "androidx.room:room-runtime:$room_version"
