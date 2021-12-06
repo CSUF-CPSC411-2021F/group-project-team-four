@@ -1,6 +1,7 @@
 package com.example.skoolplanner
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -32,12 +33,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        val selectedItemId = bottomNavigationView.selectedItemId;
-        if(selectedItemId != R.id.todayView) {
-            bottomNavigationView.selectedItemId = R.id.todayView
-        }
-        else {
-            super.onBackPressed()
-        }
+        bottomNavigationView.selectedItemId = R.id.todayView
     }
 }

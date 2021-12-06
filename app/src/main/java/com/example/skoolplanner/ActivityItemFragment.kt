@@ -52,4 +52,5 @@ class ActivityItemFragment : Fragment() {
 
         return binding.root
     }
+
 }

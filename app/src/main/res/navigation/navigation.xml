@@ -37,7 +37,11 @@
     <fragment
         android:id="@+id/todayView"
         android:name="com.example.skoolplanner.TodayView"
-        android:label="TodayView" />
+        android:label="TodayView" >
+        <action
+            android:id="@+id/action_todayView_to_activityItemFragment"
+            app:destination="@id/activityItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/examView"
         android:name="com.example.skoolplanner.ExamView"
