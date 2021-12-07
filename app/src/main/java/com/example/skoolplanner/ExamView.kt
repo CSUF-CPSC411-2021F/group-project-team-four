@@ -64,8 +64,6 @@ class ExamView : Fragment() {
 
                 for(activity in it)
                 {
-                    Log.d("DebugLog", "Exam?")
-                    Log.d("DebugLog", activity.isExam.toString())
                     if(activity.isExam)
                     {
                         newExamList.add(activity)

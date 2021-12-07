@@ -1,6 +1,8 @@
 package com.example.skoolplanner
 
 import android.app.Application
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -36,7 +38,9 @@ class ScheduleViewModel(
             schedule.classEndTime = classEndTime.value.toString()
 
             // Insert data to the database using the insert coroutine.
-            database.insert(schedule)
+            if (schedule.className.isNotBlank() && schedule.classDays.isNotBlank() && schedule.classStartTime.isNotBlank() && schedule.classEndTime.isNotBlank()) {
+                database.insert(schedule)
+            }
         }
 
     }

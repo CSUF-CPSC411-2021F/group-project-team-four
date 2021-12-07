@@ -116,7 +116,7 @@ class TodayView : Fragment() {
                         val date = formatter.parse(it.dueTime)
                         date
                     }
-                    else -> newActivityList.sortBy { it.activityId }
+                    else -> newActivityList.sortByDescending { it.activityId }
                 }
                 activityAdapter.submitList(newActivityList)
             }
