@@ -2,104 +2,104 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <!-- ClassScheduleViewModel that contains data about the class. -->
-        <variable
-            name="scheduleItemViewModel"
-            type="com.example.skoolplanner.scheduleitem.ScheduleItemViewModel" />
-    </data>
+<!--    <data>-->
+<!--        &lt;!&ndash; ClassScheduleViewModel that contains data about the class. &ndash;&gt;-->
+<!--        <variable-->
+<!--            name="scheduleItemViewModel"-->
+<!--            type="com.example.skoolplanner.scheduleitem.ScheduleItemViewModel" />-->
+<!--    </data>-->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".scheduleitem.ScheduleItemFragment">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        tools:context=".scheduleitem.ScheduleItemFragment">-->
 
-
-        <TextView
-            android:id="@+id/Position"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="14sp" />
 
 <!--        <TextView-->
-<!--            android:id="@+id/SecId"-->
+<!--            android:id="@+id/Position"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:textSize="14sp" />-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/SecId"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_toRightOf="@id/Position"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginStart="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginEnd="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="16sp" />&ndash;&gt;-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/ClassName"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:layout_toRightOf="@id/Position"-->
+<!--            android:text="@{scheduleItemViewModel.schedule.className}"-->
 <!--            android:layout_marginStart="20dp"-->
 <!--            android:layout_marginTop="20dp"-->
 <!--            android:layout_marginEnd="10dp"-->
 <!--            android:textSize="16sp" />-->
 
-        <TextView
-            android:id="@+id/ClassName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/Position"
-            android:text="@{scheduleItemViewModel.schedule.className}"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/ClassDays"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/ClassName"-->
+<!--            android:text="@{scheduleItemViewModel.schedule.classDays}"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:textSize="16sp" />-->
 
-        <TextView
-            android:id="@+id/ClassDays"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ClassName"
-            android:text="@{scheduleItemViewModel.schedule.classDays}"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/ClassStartTime"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/ClassDays"-->
+<!--            android:text="@{scheduleItemViewModel.schedule.classStartTime}"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:textSize="16sp" />-->
 
-        <TextView
-            android:id="@+id/ClassStartTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ClassDays"
-            android:text="@{scheduleItemViewModel.schedule.classStartTime}"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/TimeDivider"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toRightOf="@+id/ClassStartTime"-->
+<!--            android:layout_below="@id/ClassDays"-->
+<!--            android:text="-"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="5dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:textSize="16sp" />-->
 
-        <TextView
-            android:id="@+id/TimeDivider"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/ClassStartTime"
-            android:layout_below="@id/ClassDays"
-            android:text="-"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/ClassEndTime"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/ClassDays"-->
+<!--            android:layout_toRightOf="@id/TimeDivider"-->
+<!--            android:text="@{scheduleItemViewModel.schedule.classEndTime}"-->
+<!--            android:layout_marginStart="5dp"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:textSize="16sp" />-->
 
-        <TextView
-            android:id="@+id/ClassEndTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ClassDays"
-            android:layout_toRightOf="@id/TimeDivider"
-            android:text="@{scheduleItemViewModel.schedule.classEndTime}"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:textSize="16sp" />
+<!--        <View-->
+<!--            android:id="@+id/divider"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_below="@+id/ClassEndTime"-->
+<!--            android:background="?android:attr/listDivider" />-->
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/ClassEndTime"
-            android:background="?android:attr/listDivider" />
-
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 </layout>
