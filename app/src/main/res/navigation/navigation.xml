@@ -68,20 +68,8 @@
             android:id="@+id/action_viewClassFragment_to_addClassFragment"
             app:destination="@id/addClassFragment" />
         <action
-            android:id="@+id/action_viewClassFragment_to_editClassFragment"
-            app:destination="@id/editClassFragment" />
-        <action
             android:id="@+id/action_viewClassFragment_to_scheduleItemFragment"
             app:destination="@id/scheduleItemFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/editClassFragment"
-        android:name="com.example.skoolplanner.EditClassFragment"
-        android:label="fragment_edit_class"
-        tools:layout="@layout/fragment_edit_class" >
-        <action
-            android:id="@+id/action_editClassFragment_to_viewClassFragment"
-            app:destination="@id/viewClassFragment" />
     </fragment>
     <fragment
         android:id="@+id/addClassFragment"

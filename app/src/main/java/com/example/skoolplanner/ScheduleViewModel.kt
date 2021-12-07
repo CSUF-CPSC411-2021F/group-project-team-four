@@ -22,7 +22,7 @@ class ScheduleViewModel(
     val classScheduleList = database.getAllClassSchedules()
 
     /**
-     * Inserts the Schedule object into the database.
+     * Inserts the Class Schedule object into the database.
      */
     fun insert() {
         // Launch coroutines in the viewModelScope so that the coroutines are automatically

@@ -25,7 +25,7 @@ class ScheduleItemFragment : Fragment() {
 
         // Create data binding
         val binding: FragmentScheduleItemBinding =
-            DataBindingUtil.inflate(inflater, R.layout.schedule_item, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_schedule_item, container, false)
 
         // Get reference to this application
         val application = requireNotNull(this.activity).application
