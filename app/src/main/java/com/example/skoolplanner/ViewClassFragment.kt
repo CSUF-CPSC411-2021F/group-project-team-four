@@ -14,6 +14,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.skoolplanner.adapter.ScheduleAdapter
 import com.example.skoolplanner.adapter.ScheduleListener
 import com.example.skoolplanner.database.ClassScheduleDatabase
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 /**
  * A simple [Fragment] subclass.
@@ -71,6 +73,105 @@ class ViewClassFragment : Fragment() {
                 scheduleAdapter.submitList(it)
             }
         })
+
+        // Opens a time picker, allowing the user to set the Class Start Time
+        binding.classTimeStart.setOnClickListener {
+            val picker = MaterialTimePicker.Builder()
+                .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(12)
+                .setMinute(10)
+                .setTitleText("Select Time Due")
+                .build()
+            picker.show(childFragmentManager, "Tag")
+
+            picker.addOnPositiveButtonClickListener {
+                val hour: Int = picker.hour
+                var newHour: Int = hour % 12
+                val minute: Int = picker.minute
+                var timeChosen: String = "12:10"
+
+
+                // If the user inputs 0 for the hour, it is set to 12
+                if (newHour == 0) {
+                    newHour = 12
+                }
+
+                // Adds a zero to the minute value if user chose a number below 10 (for example,
+                // converts 12:5 to 12:05)
+                if(minute < 10)
+                {
+                    timeChosen = "${newHour}:0${picker.minute}"
+                }
+                else
+                {
+                    timeChosen = "${newHour}:${picker.minute}"
+                }
+
+                // Sets a period (AM or PM) for the time
+                val clockPeriod: String = if (hour >= 12) {
+                    "PM"
+                } else {
+                    "AM"
+                }
+
+                // A string with the time chosen by the user
+                val time = "Time: $timeChosen $clockPeriod"
+
+                // Sets the text value of the dueTime TextView to time
+                binding.classTimeStart.text = time
+            }
+        }
+
+        // Opens a time picker, allowing the user to set the Class Start Time
+        binding.classTimeEnd.setOnClickListener {
+            val picker = MaterialTimePicker.Builder()
+                .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(12)
+                .setMinute(10)
+                .setTitleText("Select Time Due")
+                .build()
+            picker.show(childFragmentManager, "Tag")
+
+            picker.addOnPositiveButtonClickListener {
+                val hour: Int = picker.hour
+                var newHour: Int = hour % 12
+                val minute: Int = picker.minute
+                var timeChosen: String = "12:10"
+
+
+                // If the user inputs 0 for the hour, it is set to 12
+                if (newHour == 0) {
+                    newHour = 12
+                }
+
+                // Adds a zero to the minute value if user chose a number below 10 (for example,
+                // converts 12:5 to 12:05)
+                if(minute < 10)
+                {
+                    timeChosen = "${newHour}:0${picker.minute}"
+                }
+                else
+                {
+                    timeChosen = "${newHour}:${picker.minute}"
+                }
+
+                // Sets a period (AM or PM) for the time
+                val clockPeriod: String = if (hour >= 12) {
+                    "PM"
+                } else {
+                    "AM"
+                }
+
+                // A string with the time chosen by the user
+                val time = "Time: $timeChosen $clockPeriod"
+
+                // Sets the text value of the dueTime TextView to time
+                binding.classTimeEnd.text = time
+            }
+        }
+
         return binding.root
     }
 }
