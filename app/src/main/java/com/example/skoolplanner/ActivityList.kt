@@ -50,15 +50,15 @@ class ActivityList : Fragment() {
             ViewModelProvider(
                 this, viewModelFactory).get(ActivityViewModel::class.java)
 
-        val spinner: Spinner = binding.activityType
-        ArrayAdapter.createFromResource(
-            requireContext(),
-            R.array.activity_type_options,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            spinner.adapter = adapter
-        }
+        //val spinner: Spinner = binding.activityType
+        //ArrayAdapter.createFromResource(
+          //  requireContext(),
+            //R.array.activity_type_options,
+            //android.R.layout.simple_spinner_item
+        //).also { adapter ->
+          //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            //spinner.adapter = adapter
+        //}
 
         // Connects the ActivityViewModel to the variable in the activity_list layout
         binding.activityViewModel = activityViewModel
@@ -96,7 +96,7 @@ class ActivityList : Fragment() {
 
         binding.dueDate.setOnClickListener {
             val picker = MaterialDatePicker.Builder.datePicker()
-                .setTitleText("Select Assignment Date")
+                .setTitleText("Select Due Date")
                 .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
                 .build()
             picker.show(childFragmentManager, "tag")
@@ -114,15 +114,28 @@ class ActivityList : Fragment() {
                 .setTimeFormat(TimeFormat.CLOCK_12H)
                 .setHour(12)
                 .setMinute(10)
-                .setTitleText("Select Exam time")
+                .setTitleText("Select Time Due")
                 .build()
             picker.show(childFragmentManager, "Tag")
+
             picker.addOnPositiveButtonClickListener {
                 val hour: Int = picker.hour
                 var newHour: Int = hour % 12
                 val minute: Int = picker.minute
+                var timeChosen: String = "12:10"
                 if (newHour == 0) {
                     newHour = 12
+                }
+
+                // If the user chose a minute value below 10 (such as 5), make sure to add a zero
+                // value (05)
+                if(minute < 10)
+                {
+                    timeChosen = "${newHour}:0${picker.minute}"
+                }
+                else
+                {
+                    timeChosen = "${newHour}:${picker.minute}"
                 }
 
                 val clockPeriod: String = if (hour >= 12) {
@@ -131,8 +144,7 @@ class ActivityList : Fragment() {
                     "AM"
                 }
 
-
-                val time = "Time: $newHour:$minute $clockPeriod"
+                val time = "Time: $timeChosen $clockPeriod"
                 binding.dueTime.text = time
             }
         }

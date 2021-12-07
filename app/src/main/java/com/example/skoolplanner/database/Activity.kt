@@ -23,5 +23,8 @@ data class Activity(
     var dueTime: String = "",
 
     @ColumnInfo
-    var description: String = ""
+    var description: String = "",
+
+    @ColumnInfo
+    var isExam: Boolean = false
 )

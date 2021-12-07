@@ -21,6 +21,7 @@ class ActivityViewModel(
     var dueDate = MutableLiveData("") // Due date property of Activity
     var dueTime = MutableLiveData("") // Due Time Property of Activity
     var description = MutableLiveData("") // Description of Activity
+    //var isExam = MutableLiveData("") // Activity type (assignment or exam)
 
     // Gets all Activity objects from the database
     val activityList = database.getAllActivities()
@@ -36,7 +37,18 @@ class ActivityViewModel(
             activity.name = name.value.toString()
             activity.dueDate = dueDate.value.toString()
             activity.dueTime = dueTime.value.toString()
-            activity.description = description.value.toString()
+
+            // If there was no input for description field, "No description." will be assigned to
+            // the description property of the activity
+            if(description.value.toString() == "")
+            {
+                activity.description = "No description."
+            }
+            else
+            {
+                activity.description = description.value.toString()
+            }
+            //activity.activityType = activityType.value.toString()
 
             if(activity.name.isNotBlank() && activity.dueDate.isNotBlank()
                 && activity.dueTime.isNotBlank())
