@@ -9,7 +9,7 @@ import com.example.skoolplanner.database.ActivityDao
 import kotlinx.coroutines.launch
 
 /**
- * An ActivityViewModel used for data binding.
+ * An ActivityViewModel that connects to the database and uses data binding
  */
 class ActivityViewModel(
 
@@ -27,13 +27,14 @@ class ActivityViewModel(
     val activityList = database.getAllActivities()
 
     /**
-     * Inserts an Activity object into the database.
+     * Adds an Activity entity to the database
      */
     fun insert() {
         viewModelScope.launch {
-            // Create Activity object
+            // Creates an Activity object
             var activity = Activity()
 
+            // Data is collected from input fields
             activity.name = name.value.toString()
             activity.dueDate = dueDate.value.toString()
             activity.dueTime = dueTime.value.toString()
@@ -52,27 +53,24 @@ class ActivityViewModel(
             {
                 activity.description = description.value.toString()
             }
-            //activity.activityType = activityType.value.toString()
 
+            // Checks to ensure that the name, due date, and due time fields are not empty
+            // before inserting the activity entity into the database
             if(activity.name.isNotBlank() && activity.dueDate.isNotBlank()
                 && activity.dueTime.isNotBlank())
             {
+                // Inserts the Activity entity into the database
                 database.insert(activity)
             }
         }
     }
 
-
-
-    fun getActivity(key: Long) {
-        database.get(key)
-    }
-
     /**
-     * Deletes all Activity objects from the database
+     * Clears all Activity entities from the database
      */
     fun clear() {
         viewModelScope.launch {
+            // Deletes data from the database
             database.clear()
         }
     }

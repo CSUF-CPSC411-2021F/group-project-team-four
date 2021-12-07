@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.CompoundButton
 import android.widget.Spinner
+import android.widget.Switch
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -24,8 +24,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 /**
- * A fragment that allows the user to input and clear Activity objects, and displays this list of
- * Activities in a RecyclerView
+ * A fragment that allows the user to input and clear Activity objects. These Activity entities are
+ * displayed in a RecyclerView.
  */
 class ActivityList : Fragment() {
 
@@ -50,16 +50,6 @@ class ActivityList : Fragment() {
         val activityViewModel =
             ViewModelProvider(
                 this, viewModelFactory).get(ActivityViewModel::class.java)
-
-        //val spinner: Spinner = binding.activityType
-        //ArrayAdapter.createFromResource(
-          //  requireContext(),
-            //R.array.activity_type_options,
-            //android.R.layout.simple_spinner_item
-        //).also { adapter ->
-          //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            //spinner.adapter = adapter
-        //}
 
         // Connects the ActivityViewModel to the variable in the activity_list layout
         binding.activityViewModel = activityViewModel
@@ -95,6 +85,7 @@ class ActivityList : Fragment() {
             }
         })
 
+        // Opens a date picker, allowing the user to set a due date for an Activity
         binding.dueDate.setOnClickListener {
             val picker = MaterialDatePicker.Builder.datePicker()
                 .setTitleText("Select Due Date")
@@ -103,11 +94,15 @@ class ActivityList : Fragment() {
             picker.show(childFragmentManager, "tag")
 
             picker.addOnPositiveButtonClickListener {
+                // Sets date to the date value (picker.headerText) that the user chose
                 var date = "${picker.headerText}"
+
+                // Sets the text value of the dueDate TextView to date
                 binding.dueDate.text = date
             }
 
         }
+
 
         binding.isExam.setOnCheckedChangeListener { _, isChecked ->
             binding.placeholder.text = ""
@@ -118,6 +113,7 @@ class ActivityList : Fragment() {
             }
         }
 
+        // Opens a time picker, allowing the user to set a time at which an Activity is due
         binding.dueTime.setOnClickListener {
             val picker = MaterialTimePicker.Builder()
                 .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
@@ -133,33 +129,37 @@ class ActivityList : Fragment() {
                 var newHour: Int = hour % 12
                 val minute: Int = picker.minute
                 var timeChosen: String = "12:10"
+
+
+                // If the user inputs 0 for the hour, it is set to 12
                 if (newHour == 0) {
                     newHour = 12
                 }
 
-                // If the user chose a minute value below 10 (such as 5), make sure to add a zero
-                // value (05)
-                if (minute < 10) {
+                // Adds a zero to the minute value if user chose a number below 10 (for example,
+                // converts 12:5 to 12:05)
+                if(minute < 10)
+                {
                     timeChosen = "${newHour}:0${picker.minute}"
-                } else {
+                }
+                else
+                {
                     timeChosen = "${newHour}:${picker.minute}"
                 }
 
+                // Sets a period (AM or PM) for the time
                 val clockPeriod: String = if (hour >= 12) {
                     "PM"
                 } else {
                     "AM"
                 }
 
+                // Sets the text value of the dueTime TextView to time
                 val time = "$timeChosen $clockPeriod"
                 binding.dueTime.text = time
             }
         }
         // Return a link to the layout root
         return binding.root
-    }
-
-    fun sortList() {
-
     }
 }

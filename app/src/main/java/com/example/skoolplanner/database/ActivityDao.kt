@@ -13,7 +13,7 @@ import androidx.room.Update
 @Dao
 interface ActivityDao {
 
-    // Adds an Activity entity to a table in the database
+    // Inserts an Activity entity to a table in the database
     @Insert
     suspend fun insert(activity: Activity)
 

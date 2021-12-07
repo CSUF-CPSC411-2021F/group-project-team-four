@@ -21,7 +21,7 @@
         android:layout_height="wrap_content">
 
         <!-- Displays the name of the activity. If a user clicks on an activity in the list, it
-             will direct the user to the activity_item layout
+             will direct the user to the activity_item_fragment layout
         -->
         <TextView
             android:id="@+id/name"
