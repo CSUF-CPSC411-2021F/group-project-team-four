@@ -90,8 +90,6 @@ class ActivityList : Fragment() {
 
             picker.addOnPositiveButtonClickListener {
                 var date = "${picker.headerText}"
-                var simpleDateFormat = SimpleDateFormat("MM/dd/yyyy")
-                date = simpleDateFormat.format(Date())
                 binding.dueDate.text = date
             }
 

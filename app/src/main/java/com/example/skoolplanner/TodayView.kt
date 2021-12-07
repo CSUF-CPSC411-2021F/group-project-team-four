@@ -61,7 +61,7 @@ class TodayView : Fragment() {
 
         val calendar = Calendar.getInstance()
         val calendarView: CalendarView = binding.simpleCalendarView
-        var simpleDateFormat = SimpleDateFormat("MM/dd/yyyy")
+        var simpleDateFormat = SimpleDateFormat("MMM d, yyyy")
         clickedDate = simpleDateFormat.format(Date())
         getActivities(clickedDate, binding, sortOption)
 
