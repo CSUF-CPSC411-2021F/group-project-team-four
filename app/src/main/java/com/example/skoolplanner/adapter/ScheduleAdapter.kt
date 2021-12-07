@@ -11,7 +11,7 @@ import com.example.skoolplanner.database.ClassSchedule
 import com.example.skoolplanner.databinding.ScheduleItemBinding
 
 /**
- * An adapter for the RecyclerView in the activity_list layout file. It uses DiffCallback for
+ * An adapter for the RecyclerView in the fragment_view_class layout file. It uses DiffCallback for
  * better performance and a listener to handle taps on each item.
  */
 class ScheduleAdapter(val clickListener: ScheduleListener) : ListAdapter<ClassSchedule,
@@ -37,7 +37,7 @@ class ScheduleAdapter(val clickListener: ScheduleListener) : ListAdapter<ClassSc
      * Creates a View to visualize one element in the RecyclerView.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        // We use an inflater based on the parent (IntersectionListFragment) and create an
+        // We use an inflater based on the parent (ViewClassFragment) and create an
         // ItemViewHolder with binding to the layout to simplify access.
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = ScheduleItemBinding.inflate(layoutInflater, parent, false)
@@ -60,14 +60,14 @@ class ScheduleAdapter(val clickListener: ScheduleListener) : ListAdapter<ClassSc
  */
 class ScheduleDiffCallback : DiffUtil.ItemCallback<ClassSchedule>() {
     /**
-     * We use intersectionId because it is a unique ID referring to a single element.
+     * We use secId because it is a unique ID referring to a single element.
      */
     override fun areItemsTheSame(oldItem: ClassSchedule, newItem: ClassSchedule): Boolean {
         return oldItem.secId == newItem.secId
     }
 
     /**
-     * We check all properties to check equality between Intersection objects.
+     * We check all properties to check equality between Class Schedule objects.
      */
     override fun areContentsTheSame(oldItem: ClassSchedule, newItem: ClassSchedule): Boolean {
         return oldItem.className == newItem.className && oldItem.classDays == newItem.classDays &&
