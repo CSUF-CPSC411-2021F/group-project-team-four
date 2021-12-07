@@ -2,11 +2,7 @@ package com.example.skoolplanner
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.example.skoolplanner.database.ClassSchedule
 import com.example.skoolplanner.database.ClassScheduleDao
-import kotlinx.coroutines.launch
 
 /**
  * ClassScheduleViewModel used for data binding. Provides a connection to the database

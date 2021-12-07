@@ -1,17 +1,13 @@
 package com.example.skoolplanner
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Switch
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.skoolplanner.adapter.ActivityListAdapter
 import com.example.skoolplanner.adapter.ActivityListener
@@ -20,8 +16,6 @@ import com.example.skoolplanner.databinding.ActivityListBinding
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
-import java.text.SimpleDateFormat
-import java.util.*
 
 /**
  * A fragment that allows the user to input and clear Activity objects. These Activity entities are
@@ -49,7 +43,8 @@ class ActivityList : Fragment() {
         // Creates an ActivityViewModel
         val activityViewModel =
             ViewModelProvider(
-                this, viewModelFactory).get(ActivityViewModel::class.java)
+                this, viewModelFactory
+            ).get(ActivityViewModel::class.java)
 
         // Connects the ActivityViewModel to the variable in the activity_list layout
         binding.activityViewModel = activityViewModel
@@ -58,8 +53,7 @@ class ActivityList : Fragment() {
         binding.lifecycleOwner = this
 
         // A lambda function that is called when an item in the RecyclerView is tapped
-        var activityAdapter = ActivityListAdapter(ActivityListener {
-            activityId ->
+        var activityAdapter = ActivityListAdapter(ActivityListener { activityId ->
             // Moves to the ActivityItemFragment view and provides the id of the activity
             // referenced by the select item in the RecyclerView
             this.findNavController().navigate(
@@ -71,8 +65,8 @@ class ActivityList : Fragment() {
         // Navigates from the ActivityList view to the CreateActivity view when "Add Activity"
         // button is clicked on
         //binding.createActivityButton.setOnClickListener { view: View ->
-            //view.findNavController()
-                //.navigate(R.id.action_activityList_to_createActivityFragment)
+        //view.findNavController()
+        //.navigate(R.id.action_activityList_to_createActivityFragment)
         //}
 
         // Associates the adapter with the RecyclerView
@@ -138,12 +132,9 @@ class ActivityList : Fragment() {
 
                 // Adds a zero to the minute value if user chose a number below 10 (for example,
                 // converts 12:5 to 12:05)
-                if(minute < 10)
-                {
+                if (minute < 10) {
                     timeChosen = "${newHour}:0${picker.minute}"
-                }
-                else
-                {
+                } else {
                     timeChosen = "${newHour}:${picker.minute}"
                 }
 

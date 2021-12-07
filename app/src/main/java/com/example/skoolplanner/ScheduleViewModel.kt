@@ -1,8 +1,6 @@
 package com.example.skoolplanner
 
 import android.app.Application
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -12,7 +10,8 @@ import kotlinx.coroutines.launch
 
 class ScheduleViewModel(
     val database: ClassScheduleDao, // Data access object for the ClassSchedule entity
-    application: Application) : AndroidViewModel(application) {
+    application: Application
+) : AndroidViewModel(application) {
 
     var className = MutableLiveData("")
     var classDays = MutableLiveData("")

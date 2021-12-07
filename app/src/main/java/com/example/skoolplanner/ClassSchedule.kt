@@ -2,7 +2,7 @@ package com.example.skoolplanner
 
 import androidx.appcompat.app.AppCompatActivity
 
-class ClassSchedule : AppCompatActivity(){
+class ClassSchedule : AppCompatActivity() {
 //
 //    var class_name : String = ""
 //    var class_day : String = ""

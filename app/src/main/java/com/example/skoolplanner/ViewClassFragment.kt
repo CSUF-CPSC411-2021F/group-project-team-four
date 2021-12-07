@@ -1,21 +1,20 @@
 package com.example.skoolplanner
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
-import com.example.skoolplanner.databinding.FragmentViewClassBinding
 import androidx.navigation.fragment.findNavController
 import com.example.skoolplanner.adapter.ScheduleAdapter
 import com.example.skoolplanner.adapter.ScheduleListener
 import com.example.skoolplanner.database.ClassScheduleDatabase
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.example.skoolplanner.databinding.FragmentViewClassBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -45,7 +44,8 @@ class ViewClassFragment : Fragment() {
         // Generate an ScheduleViewModel using the factory.
         val scheduleViewModel =
             ViewModelProvider(
-                this, viewModelFactory).get(ScheduleViewModel::class.java)
+                this, viewModelFactory
+            ).get(ScheduleViewModel::class.java)
 
         // Connect the ScheduleViewModel with the variable in the layout
         binding.scheduleViewModel = scheduleViewModel
@@ -53,8 +53,7 @@ class ViewClassFragment : Fragment() {
         binding.lifecycleOwner = this
 
         // Provide a lambda function that is called when the RecyclerView item is selected.
-        var scheduleAdapter = ScheduleAdapter(ScheduleListener {
-                secId ->
+        var scheduleAdapter = ScheduleAdapter(ScheduleListener { secId ->
             // Navigate to the schedule view and provide the id of the section referenced
             // by the select RecyclerView item.
             this.findNavController().navigate(

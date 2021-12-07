@@ -2,11 +2,9 @@ package com.example.skoolplanner.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.skoolplanner.R
 import com.example.skoolplanner.database.Activity
 import com.example.skoolplanner.databinding.ActivityItemBinding
 

@@ -2,10 +2,7 @@ package com.example.skoolplanner
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.findNavController
+
 //import com.example.skoolplanner.databinding.CreateActivityBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,20 +29,20 @@ class CreateActivity : Fragment() {
     }
 
     //override fun onCreateView(
-      //  inflater: LayoutInflater, container: ViewGroup?,
-        //savedInstanceState: Bundle?
+    //  inflater: LayoutInflater, container: ViewGroup?,
+    //savedInstanceState: Bundle?
     //): View? {
-        // Inflate the layout for this fragment
-        //val binding = CreateActivityBinding.inflate(layoutInflater)
+    // Inflate the layout for this fragment
+    //val binding = CreateActivityBinding.inflate(layoutInflater)
 
-        // Moves from the CreateActivity view to the ActivityList view when the "Add" button is
-        // clicked on
-        //binding.addButton.setOnClickListener{ view: View ->
-          //  view.findNavController()
-            //    .navigate(R.id.action_createActivity_to_activityList)
-        //}
+    // Moves from the CreateActivity view to the ActivityList view when the "Add" button is
+    // clicked on
+    //binding.addButton.setOnClickListener{ view: View ->
+    //  view.findNavController()
+    //    .navigate(R.id.action_createActivity_to_activityList)
+    //}
 
-        //return binding.root
+    //return binding.root
     //}
 
     companion object {

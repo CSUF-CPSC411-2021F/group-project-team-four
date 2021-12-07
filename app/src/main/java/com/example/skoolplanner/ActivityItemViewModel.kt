@@ -8,7 +8,7 @@ import com.example.skoolplanner.database.ActivityDao
  * An ActivityItemViewModel that provides a connection to the database for storing and
  * retrieving corresponding values.
  */
-class ActivityItemViewModel (
+class ActivityItemViewModel(
     val activityId: Long,
     val database: ActivityDao,
     application: Application
