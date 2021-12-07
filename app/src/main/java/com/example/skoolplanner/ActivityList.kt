@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -48,6 +49,16 @@ class ActivityList : Fragment() {
         val activityViewModel =
             ViewModelProvider(
                 this, viewModelFactory).get(ActivityViewModel::class.java)
+
+        val spinner: Spinner = binding.activityType
+        ArrayAdapter.createFromResource(
+            requireContext(),
+            R.array.activity_type_options,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            spinner.adapter = adapter
+        }
 
         // Connects the ActivityViewModel to the variable in the activity_list layout
         binding.activityViewModel = activityViewModel
