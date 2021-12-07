@@ -43,20 +43,31 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/className" />
 
-        <EditText
+        <!--        <EditText-->
+<!--            android:id="@+id/classTimeStart"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="10dp"-->
+<!--            android:hint="Start Time"-->
+<!--            android:text="@={scheduleViewModel.classStartTime}"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/classDays" />-->
+
+        <TextView
             android:id="@+id/classTimeStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="392dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
             android:hint="Start Time"
             android:text="@={scheduleViewModel.classStartTime}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/classDays" />
 
-        <EditText
+        <TextView
             android:id="@+id/classTimeEnd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
