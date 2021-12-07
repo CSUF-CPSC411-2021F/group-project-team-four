@@ -18,20 +18,10 @@ class ActivityViewModelTest {
     @Test
     fun insert() {
 
-        //val activities = listOf<Activity>(
-          //  Activity(1, "Name", "Dec 1, 2021", "Time: 12:10 PM", "")
-        //)
-
-        // Given a fresh ViewModel
-        //val ActivityViewModel = ActivityViewModel(ApplicationProvider.getApplicationContext())
-
         activityViewModel.insert()
 
         val nameValue = activityViewModel.name
 
         assertEquals(nameValue, "")
-
-        //assertEquals(value, "")
-
     }
 }

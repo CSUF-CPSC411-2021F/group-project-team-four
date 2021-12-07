@@ -30,6 +30,15 @@ class ExamView : Fragment() {
     ): View? {
         _binding = FragmentExamViewBinding.inflate(inflater, container, false)
 
+        //val myDataset = Datasource().loadExams()
+        //val recyclerView = binding.examList
+        //recyclerView.adapter = ExamItemAdapter(myDataset as MutableList<Exam>)
+
+        //binding.newExamButton.setOnClickListener {
+        //  it.findNavController()
+        //    .navigate(R.id.action_examView_to_createExam)
+        //}
+
         val application = requireNotNull(this.activity).application
         val dataSource = ActivityDatabase.getInstance(application).activityDao
         val viewModelFactory = ActivityViewModelFactory(dataSource, application)

@@ -154,10 +154,4 @@ class ActivityList : Fragment() {
         // Return a link to the layout root
         return binding.root
     }
-
-    fun getNumberOfActivities(activities: List<Activity>?): Int {
-        val totalNumberOfActivities = activities!!.size
-
-        return(totalNumberOfActivities)
-    }
 }
