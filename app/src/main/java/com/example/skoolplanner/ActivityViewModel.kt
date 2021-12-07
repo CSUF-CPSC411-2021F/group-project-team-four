@@ -38,8 +38,16 @@ class ActivityViewModel(
             activity.dueTime = dueTime.value.toString()
             activity.description = description.value.toString()
 
-            database.insert(activity)
+            if(activity.name.isNotBlank() && activity.dueDate.isNotBlank()
+                && activity.dueTime.isNotBlank())
+            {
+                database.insert(activity)
+            }
         }
+    }
+
+    fun getActivity(key: Long) {
+        database.get(key)
     }
 
     /**
