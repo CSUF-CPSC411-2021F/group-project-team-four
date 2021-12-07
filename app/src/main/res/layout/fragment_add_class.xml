@@ -142,7 +142,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@id/cancel_button"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="80dp"/>
 
         <Button
             android:id="@+id/cancel_button"
@@ -152,7 +152,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="80dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

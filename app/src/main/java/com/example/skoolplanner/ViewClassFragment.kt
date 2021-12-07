@@ -34,18 +34,18 @@ class ViewClassFragment : Fragment() {
         // Get reference to the application
         val application = requireNotNull(this.activity).application
 
-        // Retrieve Intersection data access object.
+        // Retrieve ClassSchedule data access object.
         val dataSource = ClassScheduleDatabase.getInstance(application).classScheduleDao
 
         // Create a factory that generates IntersectionViewModels connected to the database.
         val viewModelFactory = ScheduleViewModelFactory(dataSource, application)
 
-        // Generate an IntersectionViewModel using the factory.
+        // Generate an ScheduleViewModel using the factory.
         val scheduleViewModel =
             ViewModelProvider(
                 this, viewModelFactory).get(ScheduleViewModel::class.java)
 
-        // Connect the IntersectionViewModel with the variable in the layout
+        // Connect the ScheduleViewModel with the variable in the layout
         binding.scheduleViewModel = scheduleViewModel
         // Assign the lifecycle owner to the activity so it manages the data accordingly.
         binding.lifecycleOwner = this
@@ -53,7 +53,7 @@ class ViewClassFragment : Fragment() {
         // Provide a lambda function that is called when the RecyclerView item is selected.
         var scheduleAdapter = ScheduleAdapter(ScheduleListener {
                 secId ->
-            // Navigate to the intersection view and provide the id of the intersection referenced
+            // Navigate to the schedule view and provide the id of the section referenced
             // by the select RecyclerView item.
             this.findNavController().navigate(
                 ViewClassFragmentDirections
@@ -62,8 +62,8 @@ class ViewClassFragment : Fragment() {
         })
 
         binding.addButton.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(R.id.action_viewClassFragment_to_addClassFragment)
+//            view.findNavController()
+//                .navigate(R.id.action_viewClassFragment_to_addClassFragment)
         }
 
 //        binding.editButton.setOnClickListener { view: View ->
@@ -71,11 +71,11 @@ class ViewClassFragment : Fragment() {
 //                .navigate(R.id.action_viewClassFragment_to_editClassFragment)
 //        }
 
-        // Attach intersection adapter.
+        // Attach schedule adapter.
         binding.scheduleList.adapter = scheduleAdapter
 
-        // Submit an updated list to the intersection listAdapter whenever it changes. Take note
-        // intersectionList is a LiveData object.
+        // Submit an updated list to the schedule listAdapter whenever it changes. Take note
+        // classScheduleList is a LiveData object.
         scheduleViewModel.classScheduleList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 scheduleAdapter.submitList(it)
