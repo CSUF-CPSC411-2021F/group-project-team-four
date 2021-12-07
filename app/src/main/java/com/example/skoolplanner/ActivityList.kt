@@ -15,6 +15,7 @@ import com.example.skoolplanner.adapter.ActivityListAdapter
 import com.example.skoolplanner.adapter.ActivityListener
 import com.example.skoolplanner.database.ActivityDatabase
 import com.example.skoolplanner.databinding.ActivityListBinding
+import com.google.android.material.datepicker.MaterialDatePicker
 
 /**
  * A fragment that allows the user to input and clear Activity objects, and displays this list of
@@ -77,6 +78,20 @@ class ActivityList : Fragment() {
                 activityAdapter.submitList(it)
             }
         })
+
+        binding.dueDate.setOnClickListener {
+            val picker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Select Assignment Date")
+                .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                .build()
+            picker.show(childFragmentManager, "tag")
+
+            picker.addOnPositiveButtonClickListener {
+                val date = "${picker.headerText}"
+                binding.dueDate.text = date
+            }
+
+        }
 
         // Return a link to the layout root
         return binding.root
