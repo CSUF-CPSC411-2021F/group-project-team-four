@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.skoolplanner.adapter.ActivityListAdapter
 import com.example.skoolplanner.adapter.ActivityListener
+import com.example.skoolplanner.database.Activity
 import com.example.skoolplanner.database.ActivityDatabase
 import com.example.skoolplanner.databinding.ActivityListBinding
 import com.google.android.material.datepicker.MaterialDatePicker
@@ -152,5 +153,11 @@ class ActivityList : Fragment() {
         }
         // Return a link to the layout root
         return binding.root
+    }
+
+    fun getNumberOfActivities(activities: List<Activity>?): Int {
+        val totalNumberOfActivities = activities!!.size
+
+        return(totalNumberOfActivities)
     }
 }
