@@ -116,7 +116,7 @@ class ViewClassFragment : Fragment() {
                 }
 
                 // A string with the time chosen by the user
-                val time = "Time: $timeChosen $clockPeriod"
+                val time = "$timeChosen $clockPeriod"
 
                 // Sets the text value of the dueTime TextView to time
                 binding.classTimeStart.text = time
@@ -165,7 +165,7 @@ class ViewClassFragment : Fragment() {
                 }
 
                 // A string with the time chosen by the user
-                val time = "Time: $timeChosen $clockPeriod"
+                val time = "$timeChosen $clockPeriod"
 
                 // Sets the text value of the dueTime TextView to time
                 binding.classTimeEnd.text = time
