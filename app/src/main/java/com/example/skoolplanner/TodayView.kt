@@ -61,6 +61,7 @@ class TodayView : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
 
+        // find the calander and update clicked date based on which date is clicked
         val calendar = Calendar.getInstance()
         val calendarView: CalendarView = binding.simpleCalendarView
         var simpleDateFormat = SimpleDateFormat("MMM d, yyyy")
@@ -80,8 +81,8 @@ class TodayView : Fragment() {
 
 
     /*
-        This function will be called in order to populate the recycler view with the activities
-        that are due for the current day that is selected in the calendar
+        getActivities is called whenever the user selects a new date or new sort option, it updates
+        the recycler view with all activities from the current day that is selected
     */
     fun getActivities(date: String, binding: FragmentTodayViewBinding, sort: String) {
         val application = requireNotNull(this.activity).application
@@ -98,10 +99,12 @@ class TodayView : Fragment() {
 
         binding.activityList.adapter = activityAdapter
 
+        // Observer for activity database
         activityViewModel.activityList.observe(viewLifecycleOwner, Observer { it ->
             it?.let { it ->
                 val newActivityList = mutableListOf<Activity>()
 
+                // Check if activity is in the current selected date
                 for (activity in it)
                 {
                     if (activity.dueDate == date)
@@ -109,6 +112,7 @@ class TodayView : Fragment() {
                         newActivityList.add(activity)
                     }
                 }
+                // Sort list based on sort option selected
                 when (sort) {
                     "Name" -> newActivityList.sortBy { it.name }
                     "Time" -> newActivityList.sortBy {
