@@ -25,6 +25,8 @@ import java.text.SimpleDateFormat
 import androidx.lifecycle.Observer
 import com.example.skoolplanner.database.Activity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class TodayView : Fragment() {
@@ -109,6 +111,11 @@ class TodayView : Fragment() {
                 }
                 when (sort) {
                     "Name" -> newActivityList.sortBy { it.name }
+                    "Time" -> newActivityList.sortBy {
+                        val formatter = SimpleDateFormat("hh:mm a", Locale.US)
+                        val date = formatter.parse(it.dueTime)
+                        date
+                    }
                     else -> newActivityList.sortBy { it.activityId }
                 }
                 activityAdapter.submitList(newActivityList)

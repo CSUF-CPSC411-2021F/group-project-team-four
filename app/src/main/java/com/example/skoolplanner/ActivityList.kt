@@ -103,6 +103,16 @@ class ActivityList : Fragment() {
 
         }
 
+
+        binding.isExam.setOnCheckedChangeListener { _, isChecked ->
+            binding.placeholder.text = ""
+            if (!isChecked) {
+                binding.isExam.text = "Assignment"
+            } else {
+                binding.isExam.text = "Exam"
+            }
+        }
+
         // Opens a time picker, allowing the user to set a time at which an Activity is due
         binding.dueTime.setOnClickListener {
             val picker = MaterialTimePicker.Builder()
@@ -144,14 +154,11 @@ class ActivityList : Fragment() {
                     "AM"
                 }
 
-                // A string with the time chosen by the user
-                val time = "Time: $timeChosen $clockPeriod"
-
                 // Sets the text value of the dueTime TextView to time
+                val time = "$timeChosen $clockPeriod"
                 binding.dueTime.text = time
             }
         }
-
         // Return a link to the layout root
         return binding.root
     }

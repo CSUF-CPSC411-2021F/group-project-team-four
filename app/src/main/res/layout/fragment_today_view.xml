@@ -22,7 +22,7 @@
         <Spinner
             android:id="@+id/sort_spinner"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="49dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <View
@@ -34,8 +34,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/activityList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="LinearLayoutManager"/>
+            android:layout_height="289dp"
+            app:layoutManager="LinearLayoutManager" />
+
     </LinearLayout>
 
 </layout>
