@@ -6,6 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.skoolplanner.adapter.ScheduleAdapter
+import com.example.skoolplanner.data.Datasource
+import com.example.skoolplanner.database.ClassSchedule
 import com.example.skoolplanner.databinding.FragmentAddClassBinding
 
 /**
@@ -20,15 +24,29 @@ class AddClassFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentAddClassBinding.inflate(layoutInflater)
+        // val classDataset = Datasource().loadClassSchedules()
 
-        binding.addButton.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(R.id.action_addClassFragment_to_viewClassFragment)
-        }
+//        // The RecyclerView adapter is created here, scheduleAdapter, and it is assigned to the RecyclerView.
+//        var scheduleAdapter = ScheduleAdapter()
+
+//        binding.addButton.setOnClickListener { view: View ->
+////            // Adds the class name to the mutableList.
+////            scheduleAdapter.dataset.add("${binding.className.text}" as ClassSchedule)
+////            scheduleAdapter.dataset.add("${binding.classDays.text}" as ClassSchedule)
+////            scheduleAdapter.dataset.add("${binding.classTimeStart.text}" as ClassSchedule)
+////            scheduleAdapter.dataset.add("${binding.classTimeEnd.text}" as ClassSchedule)
+//
+//            this.findNavController().navigate(
+//                AddClassFragmentDirections
+//                    .actionAddClassFragmentToViewClassFragment()
+//            )
+//        }
 
         binding.cancelButton.setOnClickListener { view: View ->
-            view.findNavController()
-                .navigate(R.id.action_addClassFragment_to_viewClassFragment)
+            this.findNavController().navigate(
+                AddClassFragmentDirections
+                    .actionAddClassFragmentToViewClassFragment()
+            )
         }
 
         return binding.root
