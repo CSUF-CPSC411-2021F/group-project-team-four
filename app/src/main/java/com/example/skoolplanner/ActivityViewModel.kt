@@ -21,7 +21,6 @@ class ActivityViewModel(
     var dueDate = MutableLiveData("") // Due date property of Activity
     var dueTime = MutableLiveData("") // Due Time Property of Activity
     var description = MutableLiveData("") // Description of Activity
-    //var isExam = MutableLiveData("") // Activity type (assignment or exam)
 
     // Gets all Activity objects from the database
     val activityList = database.getAllActivities()
