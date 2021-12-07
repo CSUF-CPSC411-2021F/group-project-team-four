@@ -39,26 +39,23 @@ class ActivityViewModel(
             activity.dueDate = dueDate.value.toString()
             activity.dueTime = dueTime.value.toString()
 
-            if(isExam.value.toString() == "Exam") {
+            if (isExam.value.toString() == "Exam") {
                 activity.isExam = true
             }
 
             // If there was no input for description field, "No description." will be assigned to
             // the description property of the activity
-            if(description.value.toString() == "")
-            {
+            if (description.value.toString() == "") {
                 activity.description = "No description."
-            }
-            else
-            {
+            } else {
                 activity.description = description.value.toString()
             }
 
             // Checks to ensure that the name, due date, and due time fields are not empty
             // before inserting the activity entity into the database
-            if(activity.name.isNotBlank() && activity.dueDate.isNotBlank()
-                && activity.dueTime.isNotBlank())
-            {
+            if (activity.name.isNotBlank() && activity.dueDate.isNotBlank()
+                && activity.dueTime.isNotBlank()
+            ) {
                 // Inserts the Activity entity into the database
                 database.insert(activity)
             }

@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase
  * Handles the database that contains the Activity table
  */
 @Database(entities = [Activity::class], version = 1, exportSchema = false)
-abstract class ActivityDatabase: RoomDatabase() {
+abstract class ActivityDatabase : RoomDatabase() {
     // Data access object for the entity.
     abstract val activityDao: ActivityDao
 
@@ -36,9 +36,9 @@ abstract class ActivityDatabase: RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         ActivityDatabase::class.java, // Your database class
-                    "activity_database"
+                        "activity_database"
                     )
-                    .fallbackToDestructiveMigration()
+                        .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance
                 }

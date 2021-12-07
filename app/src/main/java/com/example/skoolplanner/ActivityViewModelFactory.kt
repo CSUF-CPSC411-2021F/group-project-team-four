@@ -10,7 +10,8 @@ import com.example.skoolplanner.database.ActivityDao
  */
 class ActivityViewModelFactory(
     private val dataSource: ActivityDao, // Data access object
-    private val application: Application): ViewModelProvider.Factory {
+    private val application: Application
+) : ViewModelProvider.Factory {
 
     /**
      * Creates the ActivityViewModel
