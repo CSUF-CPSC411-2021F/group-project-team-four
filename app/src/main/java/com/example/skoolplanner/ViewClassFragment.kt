@@ -61,16 +61,6 @@ class ViewClassFragment : Fragment() {
             )
         })
 
-        binding.addButton.setOnClickListener { view: View ->
-//            view.findNavController()
-//                .navigate(R.id.action_viewClassFragment_to_addClassFragment)
-        }
-
-//        binding.editButton.setOnClickListener { view: View ->
-//            view.findNavController()
-//                .navigate(R.id.action_viewClassFragment_to_editClassFragment)
-//        }
-
         // Attach schedule adapter.
         binding.scheduleList.adapter = scheduleAdapter
 
@@ -83,25 +73,4 @@ class ViewClassFragment : Fragment() {
         })
         return binding.root
     }
-//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-//                              savedInstanceState: Bundle?): View? {
-//        val binding = FragmentViewClassBinding.inflate(layoutInflater)
-//        val classDataset = Datasource().loadClassSchedules()
-//
-//        // The RecyclerView adapter is created here, scheduleAdapter, and it is assigned to the RecyclerView.
-//        var scheduleAdapter = ScheduleAdapter(classDataset as MutableList<ClassSchedule>)
-//        binding.scheduleList.adapter = scheduleAdapter
-//
-//        binding.addButton.setOnClickListener { view: View ->
-//            view.findNavController()
-//                .navigate(R.id.action_viewClassFragment_to_addClassFragment)
-//        }
-//
-//        binding.editButton.setOnClickListener { view: View ->
-//            view.findNavController()
-//                .navigate(R.id.action_viewClassFragment_to_editClassFragment)
-//        }
-//
-//        return binding.root
-//    }
 }
