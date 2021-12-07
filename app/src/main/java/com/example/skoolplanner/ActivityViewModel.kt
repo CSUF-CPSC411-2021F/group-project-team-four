@@ -19,6 +19,8 @@ class ActivityViewModel(
 
     var name = MutableLiveData("") // Name property of Activity
     var dueDate = MutableLiveData("") // Due date property of Activity
+    var dueTime = MutableLiveData("") // Due Time Property of Activity
+    var description = MutableLiveData("") // Description of Activity
 
     // Gets all Activity objects from the database
     val activityList = database.getAllActivities()
@@ -33,6 +35,8 @@ class ActivityViewModel(
 
             activity.name = name.value.toString()
             activity.dueDate = dueDate.value.toString()
+            activity.dueTime = dueTime.value.toString()
+            activity.description = description.value.toString()
 
             database.insert(activity)
         }

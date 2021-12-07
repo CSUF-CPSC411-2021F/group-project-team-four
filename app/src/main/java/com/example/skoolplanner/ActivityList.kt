@@ -16,6 +16,8 @@ import com.example.skoolplanner.adapter.ActivityListener
 import com.example.skoolplanner.database.ActivityDatabase
 import com.example.skoolplanner.databinding.ActivityListBinding
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -93,6 +95,35 @@ class ActivityList : Fragment() {
                 binding.dueDate.text = date
             }
 
+        }
+
+        binding.dueTime.setOnClickListener {
+            val picker = MaterialTimePicker.Builder()
+                .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
+                .setTimeFormat(TimeFormat.CLOCK_12H)
+                .setHour(12)
+                .setMinute(10)
+                .setTitleText("Select Exam time")
+                .build()
+            picker.show(childFragmentManager, "Tag")
+            picker.addOnPositiveButtonClickListener {
+                val hour: Int = picker.hour
+                var newHour: Int = hour % 12
+                val minute: Int = picker.minute
+                if (newHour == 0) {
+                    newHour = 12
+                }
+
+                val clockPeriod: String = if (hour >= 12) {
+                    "PM"
+                } else {
+                    "AM"
+                }
+
+
+                val time = "Time: $newHour:$minute $clockPeriod"
+                binding.dueTime.text = time
+            }
         }
 
         // Return a link to the layout root

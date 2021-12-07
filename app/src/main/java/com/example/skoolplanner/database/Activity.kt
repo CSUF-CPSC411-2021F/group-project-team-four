@@ -17,5 +17,11 @@ data class Activity(
     var name: String = "",
 
     @ColumnInfo
-    var dueDate: String = ""
+    var dueDate: String = "",
+
+    @ColumnInfo
+    var dueTime: String = "",
+
+    @ColumnInfo
+    var description: String = ""
 )
