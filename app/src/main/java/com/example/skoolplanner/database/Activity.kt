@@ -10,6 +10,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "activity_table")
 data class Activity(
 
+    // Represents the primary key for the table
     @PrimaryKey(autoGenerate = true)
     var activityId: Long = 0L,
 
