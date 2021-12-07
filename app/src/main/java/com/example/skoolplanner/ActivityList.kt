@@ -132,7 +132,7 @@ class ActivityList : Fragment() {
                 }
 
 
-                val time = "Time: $newHour:$minute $clockPeriod"
+                val time = "$newHour:$minute $clockPeriod"
                 binding.dueTime.text = time
             }
         }
