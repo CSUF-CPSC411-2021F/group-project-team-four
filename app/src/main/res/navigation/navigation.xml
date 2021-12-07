@@ -50,6 +50,9 @@
         <action
             android:id="@+id/action_examView_to_createExam"
             app:destination="@id/createExam" />
+        <action
+            android:id="@+id/action_examView_to_activityItemFragment"
+            app:destination="@id/activityItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/createExam"
