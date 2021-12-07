@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.CompoundButton
 import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -108,6 +109,15 @@ class ActivityList : Fragment() {
 
         }
 
+        binding.isExam.setOnCheckedChangeListener { _, isChecked ->
+            binding.placeholder.text = ""
+            if (!isChecked) {
+                binding.isExam.text = "Assignment"
+            } else {
+                binding.isExam.text = "Exam"
+            }
+        }
+
         binding.dueTime.setOnClickListener {
             val picker = MaterialTimePicker.Builder()
                 .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
@@ -129,12 +139,9 @@ class ActivityList : Fragment() {
 
                 // If the user chose a minute value below 10 (such as 5), make sure to add a zero
                 // value (05)
-                if(minute < 10)
-                {
+                if (minute < 10) {
                     timeChosen = "${newHour}:0${picker.minute}"
-                }
-                else
-                {
+                } else {
                     timeChosen = "${newHour}:${picker.minute}"
                 }
 
@@ -148,7 +155,6 @@ class ActivityList : Fragment() {
                 binding.dueTime.text = time
             }
         }
-
         // Return a link to the layout root
         return binding.root
     }

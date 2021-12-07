@@ -79,7 +79,7 @@
             android:onClick="@{() -> activityViewModel.insert()}"
             android:text="Add activity"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activityTypeSwitch" />
+            app:layout_constraintTop_toBottomOf="@id/isExam" />
 
         <EditText
             android:id="@+id/description"
@@ -108,7 +108,7 @@
             android:onClick="@{()-> activityViewModel.clear()}"
             android:text="Clear"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/activityTypeSwitch" />
+            app:layout_constraintTop_toBottomOf="@id/isExam" />
 
         <TextView
             android:id="@+id/activitiesLabel"
@@ -137,14 +137,26 @@
             app:layout_constraintTop_toBottomOf="@+id/activitiesLabel" />
 
         <Switch
-            android:id="@+id/activityTypeSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:text="Exam"
+            android:id="@+id/isExam"
+            android:layout_width="152dp"
+            android:layout_height="50dp"
+            android:text="@={activityViewModel.isExam}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.956"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description" />
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/placeholder"
+            android:layout_width="105dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Assignment"
+            android:textColor="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,6 +1,7 @@
 package com.example.skoolplanner
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,7 +64,9 @@ class ExamView : Fragment() {
 
                 for(activity in it)
                 {
-                    if(activity.name == "Exam")
+                    Log.d("DebugLog", "Exam?")
+                    Log.d("DebugLog", activity.isExam.toString())
+                    if(activity.isExam)
                     {
                         newExamList.add(activity)
                     }
