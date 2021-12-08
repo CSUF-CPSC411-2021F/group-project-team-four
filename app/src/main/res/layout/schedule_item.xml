@@ -21,7 +21,7 @@
         android:layout_height="wrap_content">
 
         <!-- Displays the name of the class. Clicking on the class will call the
-             passed clickListener's onClick function. It passes the intersection object
+             passed clickListener's onClick function. It passes the class schedule object
              also used for populating the interface.
         -->
         <TextView

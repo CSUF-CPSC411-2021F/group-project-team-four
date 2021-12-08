@@ -23,7 +23,7 @@ class ScheduleAdapter(val clickListener: ScheduleListener) : ListAdapter<ClassSc
         RecyclerView.ViewHolder(binding.root) {
 
         /**
-         * Assign an class schedule object and clickListener to the ItemViewHolder
+         * Assign a ClassSchedule object and clickListener to the ItemViewHolder
          */
         fun bind(item: ClassSchedule, clickListener: ScheduleListener) {
             binding.schedule = item
@@ -47,8 +47,7 @@ class ScheduleAdapter(val clickListener: ScheduleListener) : ListAdapter<ClassSc
      * access to the ItemViewHolder and its position.
      */
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        // Assign the corresponding element from the data and the click listener. Take note getItem
-        // is a function provided by ListAdapter.
+        // Assign the corresponding element from the data and the click listener.
         holder.bind(getItem(position), clickListener)
     }
 }
@@ -65,7 +64,7 @@ class ScheduleDiffCallback : DiffUtil.ItemCallback<ClassSchedule>() {
     }
 
     /**
-     * We check all properties to check equality between Class Schedule objects.
+     * We check all properties to check equality between ClassSchedule objects.
      */
     override fun areContentsTheSame(oldItem: ClassSchedule, newItem: ClassSchedule): Boolean {
         return oldItem.className == newItem.className && oldItem.classDays == newItem.classDays &&

@@ -9,9 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.skoolplanner.databinding.FragmentAddClassBinding
 
 /**
- * A simple [Fragment] subclass.
- * Use the [AddClassFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * UNUSED FRAGMENT
  */
 class AddClassFragment : Fragment() {
 

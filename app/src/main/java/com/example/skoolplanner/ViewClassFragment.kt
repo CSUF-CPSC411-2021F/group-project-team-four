@@ -17,9 +17,7 @@ import com.google.android.material.timepicker.TimeFormat
 import com.example.skoolplanner.databinding.FragmentViewClassBinding
 
 /**
- * A simple [Fragment] subclass.
- * Use the [ViewClassFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * Fragment that displays Class Schedule inputs and Recycler View
  */
 class ViewClassFragment : Fragment() {
 
@@ -38,7 +36,7 @@ class ViewClassFragment : Fragment() {
         // Retrieve ClassSchedule data access object.
         val dataSource = ClassScheduleDatabase.getInstance(application).classScheduleDao
 
-        // Create a factory that generates IntersectionViewModels connected to the database.
+        // Create a factory that generates ScheduleViewModels connected to the database.
         val viewModelFactory = ScheduleViewModelFactory(dataSource, application)
 
         // Generate an ScheduleViewModel using the factory.
@@ -73,7 +71,7 @@ class ViewClassFragment : Fragment() {
             }
         })
 
-        // Opens a time picker, allowing the user to set the Class Start Time
+        // Opens a time picker, allowing the user to set the time the class starts
         binding.classTimeStart.setOnClickListener {
             val picker = MaterialTimePicker.Builder()
                 .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
@@ -117,12 +115,12 @@ class ViewClassFragment : Fragment() {
                 // A string with the time chosen by the user
                 val time = "$timeChosen $clockPeriod"
 
-                // Sets the text value of the dueTime TextView to time
+                // Sets the text value of the classTimeStart TextView to time
                 binding.classTimeStart.text = time
             }
         }
 
-        // Opens a time picker, allowing the user to set the Class Start Time
+        // Opens a time picker, allowing the user to set the time the class ends
         binding.classTimeEnd.setOnClickListener {
             val picker = MaterialTimePicker.Builder()
                 .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
@@ -166,7 +164,7 @@ class ViewClassFragment : Fragment() {
                 // A string with the time chosen by the user
                 val time = "$timeChosen $clockPeriod"
 
-                // Sets the text value of the dueTime TextView to time
+                // Sets the text value of the classTimeEnd TextView to time
                 binding.classTimeEnd.text = time
             }
         }

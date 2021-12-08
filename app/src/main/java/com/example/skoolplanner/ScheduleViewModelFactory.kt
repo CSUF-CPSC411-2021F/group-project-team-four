@@ -14,7 +14,7 @@ class ScheduleViewModelFactory(
 ) : ViewModelProvider.Factory {
 
     /**
-     * Creates the cheduleViewModel
+     * Creates the ScheduleViewModel
      */
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

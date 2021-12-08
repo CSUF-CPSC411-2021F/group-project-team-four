@@ -3,9 +3,7 @@ package com.example.skoolplanner
 import androidx.fragment.app.Fragment
 
 /**
- * A simple [Fragment] subclass.
- * Use the [EditClassFragment.newInstance] factory method to
- * create an instance of this fragment.
+ * UNUSED FRAGMENT
  */
 class EditClassFragment : Fragment() {
 //

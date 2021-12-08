@@ -7,8 +7,8 @@ import androidx.room.RoomDatabase
 
 
 /**
- * Manages the database that stores the Profile table and its entitites.
- * The abstract class should inherit RoomDatabase()
+ * Manages the database that stores the Class Schedule table and its entities.
+ * The abstract class inherits from RoomDatabase()
  */
 @Database(entities = [ClassSchedule::class], version = 1, exportSchema = false)
 abstract class ClassScheduleDatabase : RoomDatabase() {
@@ -37,7 +37,7 @@ abstract class ClassScheduleDatabase : RoomDatabase() {
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        ClassScheduleDatabase::class.java, // Your database class
+                        ClassScheduleDatabase::class.java, // ClassSchedule database class
                         "sleep_history_database"
                     )
                         .fallbackToDestructiveMigration()

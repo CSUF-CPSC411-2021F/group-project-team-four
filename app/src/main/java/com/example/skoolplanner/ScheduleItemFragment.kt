@@ -11,7 +11,7 @@ import com.example.skoolplanner.database.ClassScheduleDatabase
 import com.example.skoolplanner.databinding.FragmentScheduleItemBinding
 
 /**
- * Fragment that displays a single class schedule.
+ * Fragment that displays a single Class Schedule.
  */
 class ScheduleItemFragment : Fragment() {
     override fun onCreateView(

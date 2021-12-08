@@ -5,13 +5,13 @@ import androidx.lifecycle.AndroidViewModel
 import com.example.skoolplanner.database.ClassScheduleDao
 
 /**
- * ClassScheduleViewModel used for data binding. Provides a connection to the database
+ * ScheduleItemViewModel used for data binding. Provides a connection to the database
  * for storing and retrieving corresponding values. It retrieves the corresponding class
  * with the provided section ID.
  */
 class ScheduleItemViewModel(
     val secId: Long,
-    val database: ClassScheduleDao, // Data access object for the Intersection entity
+    val database: ClassScheduleDao, // Data access object for the ClassSchedule entity
     application: Application
 ) : AndroidViewModel(application) {
 

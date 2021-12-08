@@ -2,6 +2,9 @@ package com.example.skoolplanner
 
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * UNUSED CLASS
+ */
 class ClassSchedule : AppCompatActivity() {
 //
 //    var class_name : String = ""
@@ -20,10 +23,8 @@ class ClassSchedule : AppCompatActivity() {
 //    }
 //
 //    fun getClassInfo() {
-//        // TODO: This function gets the inputs of the user and stores them accordingly
 //    }
 //
 //    fun display() {
-//        // TODO: This function displays the classes the user has inputted and their time and day
 //    }
 }
